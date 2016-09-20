@@ -1,3 +1,5 @@
-# COMP110 Worksheets
+# COMP110 Worksheets Andrew Findlay's Fork
 
-This is the base repository for your COMP110 worksheet tasks. Begin by *forking* this repository into your own GitHub account: click the "Fork" button in the upper right corner of the page.
+Link to youtube video playlist of completed SpaceChem levels
+https://www.youtube.com/playlist?list=PLcqWhATrrR4mO4ycL-msLCmxJM8sNyvV6
+
