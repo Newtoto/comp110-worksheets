@@ -1,3 +1,4 @@
+```
 secretWord = generate a 5 letter word
 secretWord1 = get first letter			<break down secretWord into parts>
 secretWord2 = get second letter
@@ -23,19 +24,24 @@ loop 4 times[
 	
 	if guess1 matches secretWord1:
 		+1 to numberCorrect
+	end if
 		
 	if guess2 matches secretWord2:
 		+1 to numberCorrect
+	end if
 		
 	if guess3 matches secretWord3:
 		+1 to numberCorrect
+	end if
 		
 	if guess4 matches secretWord4:
 		+1 to numberCorrect
+	end if
 		
 	if guess5 matches secretWord5:
 		+1 to numberCorrect
-
+	end if
+	
 	if numberCorrect = 5:
 		message: "you win!"
 		end loop
@@ -43,6 +49,8 @@ loop 4 times[
 		message: "Sorry, you only got " numberCorrect ", and you're out of tries. You lose"
 	else:
 		message: "You got" numberCorrect "letters correct. Try again.
+	end if
 ]
 
 end of code
+```
