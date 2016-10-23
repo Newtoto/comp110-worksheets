@@ -1,3 +1,4 @@
+```
 a) This algorithm checks a list for duplicate values
 b) For every list item, the algorithm runs though every list item, so if it has to go through all of them
 it is n^2
@@ -10,3 +11,4 @@ f) O(N Log N) https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.t
 g) O(N Log N) because of what that ^ said
 h) Algorithm 2, because it only has to run throught the list once, once it's been sorted.
 i) Algorithm 1 is faster for checking short lists.
+```
