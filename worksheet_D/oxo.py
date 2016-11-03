@@ -1,65 +1,48 @@
 class OxoBoard:
     def __init__(self):
         """ The initialiser. Initialise any fields you need here. """
-        boardList = [[0, 0, 0],
-                 [0, 0, 0],
-                 [0, 0, 0]]
-
-        # raise NotImplementedError("TODO: implement __init__")
+        self.boardList = [[0, 0, 1], [0, 0, 1], [0, 0, 1]]
 
     def get_square(self, x, y):
         """ Return 0, 1 or 2 depending on the contents of the specified square. """
-        self.x = x
-        self.y = y
 
-        return boardList[self.y * 3 + self.x]
-        # raise NotImplementedError("TODO: implement get_square")
+        return self.boardList[y][x]
 
     def set_square(self, x, y, mark):
         """ If the specified square is currently empty (0), fill it with mark and return True.
             If the square is not empty, leave it as-is and return False. """
-        if boardList[self.y * 3 + self.x] == 0:
-            boardList[self. y * 3 + self.x] = mark
+        if self.boardList[y][x] == 0:
+            self.boardList[y][x] = mark
+            return True
         else:
             return False
-        # raise NotImplementedError("TODO: implement set_square")
 
     def is_board_full(self):
         """ If there are still empty squares on the board, return False.
             If there are no empty squares, return True. """
-        # cycles through x, 0, 1, 2 and for each does y, 0, 1, 2. If any are empty false is returned and the cycle breaks. If the cycle finishes it returns true.
-        for y in xrange(3):
-            for x in xrange(3):
-                if boardList[y * 3 + x] == 0:
-                    return False
-                    break
-            return True
 
-        # raise NotImplementedError("TODO: implement is_board_full")
+        for x in xrange(3):
+            for y in xrange(3):
+                if self.boardList[y][x] == 0:
+                    return False
+        return True
 
     def get_winner(self):
         """ If a player has three in a row, return 1 or 2 depending on which player.
             Otherwise, return 0. """
-
-        if boardList[1] == boardList [2] == boardList[3]:  # horizontal wins
-            return boardList[1]
-        elif boardList[4] == boardList [5] == boardList[6]:
-            return boardList[4]
-        elif boardList[7] == boardList[8] == boardList[9]:
-            return boardList[7]
-        elif boardList[1] == boardList[4] == boardList[7]:  #vertical wins
-            return boardList[1]
-        elif boardList[2] == boardList[5] == boardList[8]:
-            return boardList[2]
-        elif boardList[3] == boardList[6] == boardList[9]:
-            return boardList[3]
-        elif boardList[1] == boardList[5] == boardList[9]:  #diagonal wins
-            return boardList[1]
-        elif boardList[3] == boardList[5] == boardList[7]:
-            return boardList[3]
-        else:
-            return 0
-        # raise NotImplementedError("TODO: implement get_winner")
+        for i in xrange(3):
+            # horizontal matches
+            if self.boardList[i][0] == self.boardList[i][1] == self.boardList[i][2] and self.boardList[i][0] > 0:
+                return self.boardList[i][0]
+            # vertical matches
+            elif self.boardList[0][i] == self.boardList[1][i] == self.boardList[2][i] and self.boardList[0][i] > 0:
+                return self.boardList[0][i]
+            # diagonal matches
+            elif self.boardList[0][0] == self.boardList[1][1] == self.boardList[2][2] and self.boardList[0][0] > 0:
+                return self.boardList[0][0]
+            elif self.boardList[0][2] == self.boardList[1][1] == self.boardList[2][0] and self.boardList[0][2] > 0:
+                return self.boardList[0][2]
+        return 0
 
     def show(self):
         """ Display the current board state in the terminal. You should not need to edit this. """
