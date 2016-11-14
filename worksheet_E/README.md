@@ -51,3 +51,12 @@ s1 = (10)(9)(8)(7)(6)(5)(4)(3)(2)(1) = 10! [10 factorial]
 
 ```
 e)
+```
+addi $s0, $zero, 10
+addi $s1, $zero, 1
+
+loop:
+mult $s1, $s1, $s0
+addi $s0, $s0, -1
+bne $s0, $zero, loop
+```
