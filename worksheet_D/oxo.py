@@ -32,11 +32,11 @@ class OxoBoard:
             # Vertical matches
             elif self.boardList[0][i] == self.boardList[1][i] == self.boardList[2][i] and self.boardList[0][i] > 0:
                 return self.boardList[0][i]
-            # Diagonal matches
-            elif self.boardList[0][0] == self.boardList[1][1] == self.boardList[2][2] and self.boardList[0][0] > 0:
-                return self.boardList[0][0]
-            elif self.boardList[0][2] == self.boardList[1][1] == self.boardList[2][0] and self.boardList[0][2] > 0:
-                return self.boardList[0][2]
+        # Diagonal matches
+        if self.boardList[0][0] == self.boardList[1][1] == self.boardList[2][2] and self.boardList[0][0] > 0:
+            return self.boardList[0][0]
+        elif self.boardList[0][2] == self.boardList[1][1] == self.boardList[2][0] and self.boardList[0][2] > 0:
+            return self.boardList[0][2]
         return 0
 
     def show(self):
